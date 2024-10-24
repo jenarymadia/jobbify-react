@@ -28,7 +28,21 @@ import {
 // This is sample data.
 const data = {
   teams: [
-
+    {
+      name: "Jobbify",
+      logo: Command,
+      plan: "Enterprise",
+    },
+    {
+      name: "Acme Corp.",
+      logo: AudioWaveform,
+      plan: "Startup",
+    },
+    {
+      name: "Evil Corp.",
+      logo: Command,
+      plan: "Free",
+    },
   ],
   navMain: [
     {

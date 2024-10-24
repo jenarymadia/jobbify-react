@@ -9,6 +9,23 @@ import { Separator } from '@/components/ui/separator';
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/Components/ui/sidebar';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState } from 'react';
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/Components/ui/dropdown-menu"
+import { CircleUser, Search } from 'lucide-react';
+import { Input } from '@headlessui/react';
 
 export default function Authenticated({
     header,
@@ -87,44 +104,7 @@ export default function Authenticated({
         //                 </div>
 
         //                 <div className="-me-2 flex items-center sm:hidden">
-        //                     <button
-        //                         onClick={() =>
-        //                             setShowingNavigationDropdown(
-        //                                 (previousState) => !previousState,
-        //                             )
-        //                         }
-        //                         className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
-        //                     >
-        //                         <svg
-        //                             className="h-6 w-6"
-        //                             stroke="currentColor"
-        //                             fill="none"
-        //                             viewBox="0 0 24 24"
-        //                         >
-        //                             <path
-        //                                 className={
-        //                                     !showingNavigationDropdown
-        //                                         ? 'inline-flex'
-        //                                         : 'hidden'
-        //                                 }
-        //                                 strokeLinecap="round"
-        //                                 strokeLinejoin="round"
-        //                                 strokeWidth="2"
-        //                                 d="M4 6h16M4 12h16M4 18h16"
-        //                             />
-        //                             <path
-        //                                 className={
-        //                                     showingNavigationDropdown
-        //                                         ? 'inline-flex'
-        //                                         : 'hidden'
-        //                                 }
-        //                                 strokeLinecap="round"
-        //                                 strokeLinejoin="round"
-        //                                 strokeWidth="2"
-        //                                 d="M6 18L18 6M6 6l12 12"
-        //                             />
-        //                         </svg>
-        //                     </button>
+                        
         //                 </div>
         //             </div>
         //         </div>
@@ -183,22 +163,37 @@ export default function Authenticated({
         <SidebarProvider>
         <AppSidebar />
         <SidebarInset>
-          <header className="flex h-14 shrink-0 items-center gap-2">
+          <header className="top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
             <div className="flex flex-1 items-center gap-2 px-3">
-              <SidebarTrigger />
+              <SidebarTrigger className="ml-0 border border-red-200"/>
               <Separator orientation="vertical" className="mr-2 h-4" />
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbPage className="line-clamp-1">
-                      Project Management & Task Tracking
+                      {header}
                     </BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
             <div className="ml-auto px-3">
-              <NavActions />
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="secondary" size="icon" className="rounded-full">
+                        <CircleUser className="h-5 w-5" />
+                        <span className="sr-only">Toggle user menu</span>
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Settings</DropdownMenuItem>
+                      <DropdownMenuItem>Support</DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Logout</DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
             </div>
           </header>
           <div className="flex flex-1 flex-col gap-4 px-4 py-10">
