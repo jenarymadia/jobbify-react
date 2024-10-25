@@ -9,7 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/Components/ui/sidebar';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState } from 'react';
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -188,10 +188,16 @@ export default function Authenticated({
                     <DropdownMenuContent align="end">
                       <DropdownMenuLabel>My Account</DropdownMenuLabel>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem>Settings</DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Link href={route('profile.edit')}>Profile</Link>
+                      </DropdownMenuItem>
                       <DropdownMenuItem>Support</DropdownMenuItem>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem>Logout</DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Link href="http://jobbify-react.test/logout" method="post" as="button">
+                          Logout
+                        </Link>
+                      </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
             </div>
