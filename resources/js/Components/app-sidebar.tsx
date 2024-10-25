@@ -52,18 +52,18 @@ const data = {
     },
     {
       title: "Clients",
-      url: "dashboard",
+      url: "clients.index",
       icon: "🤵",
     },
     {
       title: "Leads",
-      url: "dashboard",
+      url: "leads.index",
       icon: "📝",
       isActive: true,
     },
     {
       title: "Jobs",
-      url: "dashboard",
+      url: "jobs.index",
       icon: "🛠️",
       badge: "10",
     },
@@ -75,8 +75,26 @@ const data = {
     },
     {
       title: "Invoices",
-      url: "dashboard",
+      url: "invoices.index",
       icon: "💸",
+      badge: "10",
+    },
+    {
+      title: "Staffs",
+      url: "staffs.index",
+      icon: "👨‍💼",
+      badge: "10",
+    },
+    {
+      title: "Services",
+      url: "services.index",
+      icon: "🤝🏼",
+      badge: "10",
+    },
+    {
+      title: "Schedule",
+      url: "schedule.index",
+      icon: "📅",
       badge: "10",
     },
 

@@ -1,13 +1,11 @@
 "use client"
 
-import { type LucideIcon } from "lucide-react"
-
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/Components/ui/sidebar"
-import { Link } from "@inertiajs/react"
+import { Link, usePage } from "@inertiajs/react"
 
 export function NavMain({
   items,
@@ -19,11 +17,12 @@ export function NavMain({
     isActive?: boolean
   }[]
 }) {
+
   return (
     <SidebarMenu>
       {items.map((item) => (
         <SidebarMenuItem key={item.title}>
-          <SidebarMenuButton asChild isActive={item.isActive}>
+          <SidebarMenuButton asChild isActive={route().current(item.url)}>
             <Link href={route(item.url)}>
               <span>{item.icon}</span>
               <span>{item.title}</span>
