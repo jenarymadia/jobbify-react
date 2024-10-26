@@ -21,9 +21,13 @@ import { TeamSwitcher } from "@/Components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarHeader,
+  SidebarInput,
   SidebarRail,
 } from "@/Components/ui/sidebar"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
+import { Button } from "./ui/button"
 
 // This is sample data.
 const data = {
@@ -109,6 +113,35 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher teams={data.teams} />
         <NavMain items={data.navMain} />
       </SidebarHeader>
+      <SidebarContent>
+
+      </SidebarContent>
+      <SidebarFooter>
+          <div className="p-1">
+            <Card className="shadow-none">
+              <form>
+                <CardHeader className="p-4 pb-0">
+                  <CardTitle className="text-sm">
+                      <h3 className="text-base font-semibold leading-6 text-black-900">
+                          Free Trial 
+                      </h3>
+                  </CardTitle>
+                  <CardDescription>
+                    <p>Get better experience and boost your workflow.</p>
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-2.5 p-4">
+                  <Button
+                    className="w-full bg-sidebar-primary text-sidebar-primary-foreground shadow-none"
+                    size="sm"
+                  >
+                    Upgrade now
+                  </Button>
+                </CardContent>
+              </form>
+            </Card>
+          </div>
+        </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )
