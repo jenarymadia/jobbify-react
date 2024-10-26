@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar';
 import { Badge } from '@/Components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/Components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/Components/ui/card';
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/Components/ui/dropdown-menu';
 import { Pagination, PaginationContent, PaginationItem } from '@/Components/ui/pagination';
@@ -8,9 +8,8 @@ import { Progress } from '@/Components/ui/progress';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/Components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/Components/ui/tabs';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
 import { Separator } from '@radix-ui/react-dropdown-menu';
-import { Activity, ArrowUpRight, ChevronLeft, ChevronRight, Copy, CreditCard, DollarSign, File, Link, ListFilter, MoreVertical, Truck, Users } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Copy, CreditCard, File, ListFilter, MoreVertical, Truck, Users } from 'lucide-react';
 
 export default function Dashboard() {
     return (

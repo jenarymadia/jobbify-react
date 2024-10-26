@@ -4,11 +4,11 @@ import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied
 import { useCallback, useMemo, useState } from 'react';
 import { PageProps } from '@/types';
 import { format } from 'date-fns';
+import { RowSelectionOptions } from 'ag-grid-community';
 
 export default function QuotesList({
-    auth,
     quotes,
-}: PageProps<{ quotes: any[]; auth: any[];}>) {
+}: PageProps<{ quotes: any[];}>) {
     // Row Data: The data to be displayed.
     const [rowData] = useState(quotes);
     
@@ -36,7 +36,7 @@ export default function QuotesList({
         {
             headerName: "Status",
             field: "status",
-            cellRenderer: (props : number) => {
+            cellRenderer: (props: { value: number }) => {
                 // put the value in bold
                 if(props.value == 1) {
                     return <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">DRAFT</span>;
@@ -91,11 +91,11 @@ export default function QuotesList({
         
     ]);
 
-    const rowSelection = useMemo(() => { 
-        return { 
-            mode: 'multiRow' 
-        };
-    }, []);
+    const rowSelectionOptions = useMemo(() => ({
+        mode: "multiRow", // Set the correct mode as "multiRow"
+        suppressRowClickSelection: false, // Allows row clicks to toggle selection
+        checkboxSelection: true, // Enables checkboxes for selection
+    }), []);
 
     const pagination = true;
     const paginationPageSize = 10;
@@ -110,7 +110,7 @@ export default function QuotesList({
             <AgGridReact
                 rowData={rowData}
                 columnDefs={colDefs}
-                rowSelection={rowSelection}
+                rowSelection={rowSelectionOptions as RowSelectionOptions<any>}
                 pagination={pagination}
                 paginationPageSize={paginationPageSize}
                 paginationPageSizeSelector={paginationPageSizeSelector}

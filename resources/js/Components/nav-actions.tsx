@@ -33,6 +33,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/Components/ui/sidebar"
+import { Button } from "./ui/button"
 
 const data = [
   [

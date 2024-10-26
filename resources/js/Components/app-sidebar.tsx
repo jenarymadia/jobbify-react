@@ -122,12 +122,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <form>
                 <CardHeader className="p-4 pb-0">
                   <CardTitle className="text-sm">
-                      <h3 className="text-base font-semibold leading-6 text-black-900">
+                      <header className="text-base font-semibold leading-6 text-black-900">
                           Free Trial 
-                      </h3>
+                      </header>
                   </CardTitle>
                   <CardDescription>
-                    <p>Get better experience and boost your workflow.</p>
+
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-2.5 p-4">
@@ -145,4 +145,4 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarRail />
     </Sidebar>
   )
-}
+} 
